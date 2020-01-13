@@ -1,0 +1,20 @@
+[Unit]
+
+Description=TgShell bot
+After=syslog.target
+After=network.target
+
+[Service]
+
+Type=simple
+WorkingDirectory=/home/bukinpk/Projects/TgShell
+User=bukinpk
+Group=bukinpk
+ExecStart=/usr/bin/pipenv run python shell.py
+PIDFile=/run/TgShell.pid
+TimeoutSec=300
+Restart=always
+
+[Install]
+
+WantedBy=multi-user.target
